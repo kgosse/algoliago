@@ -9,9 +9,9 @@
   - track hn_logs.tsv (done)
 # data storing (done)
   - read and store data (done)
-# requests
-  * handle count requests
-  * handle popular requests
+# requests (done)
+  - handle count requests (done)
+  - handle popular requests (done)
 # tests
   * test data structure creation
   * test count requests
