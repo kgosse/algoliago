@@ -1,6 +1,6 @@
-# server
-  * take server port in argument
-  * create server
+# server (done)
+  - take server port in argument (done)
+  - create server (done)
 # data structure
   * create data structure
 # log file reading
