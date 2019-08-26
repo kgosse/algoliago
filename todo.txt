@@ -1,0 +1,18 @@
+# server
+  * take server port in argument
+  * create server
+# data structure
+  * create data structure
+# log file reading
+  * add hn_logs.tsv
+  * create hn_logs_test.tsv
+# data storing
+  * read and store data
+# requests
+  * handle count requests
+  * handle popular requests
+# tests
+  * test data structure creation
+  * test count requests
+  * test popular requests
+  * add benchmark tests
