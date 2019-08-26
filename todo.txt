@@ -1,8 +1,8 @@
 # server (done)
   - take server port in argument (done)
   - create server (done)
-# data structure
-  * create data structure
+# data structure (done)
+  - create data structures (done)
 # log file reading
   * add hn_logs.tsv
   * create hn_logs_test.tsv
