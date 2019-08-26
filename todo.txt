@@ -3,9 +3,10 @@
   - create server (done)
 # data structure (done)
   - create data structures (done)
-# log file reading
-  * add hn_logs.tsv
-  * create hn_logs_test.tsv
+# log file reading (done)
+  - take logfile as command-line argument (done)
+  - read log file (done)
+  - track hn_logs.tsv (done)
 # data storing
   * read and store data
 # requests
