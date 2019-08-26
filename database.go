@@ -91,21 +91,58 @@ func populateDB(p string) {
 	r := tsvreader.New(file)
 	log.Info("populating the db...")
 	for r.Next() {
-		recordID++
-		d := r.String()
-		u := r.String()
-		t, err := time.Parse(formats[19], d)
-		handleError(err)
-		rc := &record{
-			recordID,
-			t,
-			u,
+		err := storeData(r.String(), r.String())
+		if err != nil {
+			log.Fatal(err)
 		}
-
-		records = append(records, rc)
 	}
 	if err := r.Error(); err != nil {
 		log.Fatalf("Failed to parse tsv: %s", err)
 	}
-	log.Infof("Done. %d new records.\n", len(records))
+	log.Infof("Done. %d new records\n", len(records))
+	log.Info("sorting urls...")
+	for _, v := range years {
+		sortYearUrls(v)
+	}
+	log.Info("Done.\n")
+}
+
+func storeData(d, u string) error {
+	var err error
+	var t time.Time
+	f, _ := formats[19]
+	t, err = time.Parse(f, d)
+	if err != nil {
+		return err
+	}
+
+	_, uok := urls[u]
+	if !uok {
+		urlID++
+		urls[u] = urlID
+		iurls[urlID] = u
+	}
+
+	recordID++
+	r := &record{
+		recordID,
+		t,
+		u,
+	}
+
+	records = append(records, r)
+
+	y, ok := years[t.Year()]
+	if !ok {
+		y = &year{
+			id:            t.Year(),
+			distinctCount: 0,
+			urls:          make(map[string]int),
+		}
+		years[y.id] = y
+	}
+
+	updateYear(y, r)
+
+	return nil
 }

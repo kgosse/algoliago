@@ -7,8 +7,8 @@
   - take logfile as command-line argument (done)
   - read log file (done)
   - track hn_logs.tsv (done)
-# data storing
-  * read and store data
+# data storing (done)
+  - read and store data (done)
 # requests
   * handle count requests
   * handle popular requests
