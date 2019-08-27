@@ -17,3 +17,5 @@
   * test count requests
   * test popular requests
   * add benchmark tests
+# readme
+  - write readme (done)
