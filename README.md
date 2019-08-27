@@ -22,6 +22,6 @@ I've created a year structure with all the relevant informations. Then I have a 
 Each year holds 12 months (no surprise here). So inside a year structure,
 I have an array of 12 months. A month is another structure, like years. When given a year+month date, I can get the year, then the month and return directly the "distinct count".
 
-Then, inside a month structure, we can find an array of 31 days. In a day structure, we have an array of 24 hours. The same logic continues till a I get to seconds.
+Finally, inside a month structure, we can find an array of 31 days. In a day structure, we have an array of 24 hours. The same logic continues till a I get to seconds.
 
 This way of organizing the data helps me to find directly the answer in constant time.
