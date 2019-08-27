@@ -7,7 +7,7 @@ My focus was to organise the data so that I could have the best possible respons
 My program can answer to "count" queries in constant time, O(1). For "popular" queries, the complexity
 is O(n), n being the size parameter. Actually, I can also make it in O(1) if I don't loop through each
 popular querie to construct the response. The idea would be to have them in the response format already and to directly
-pick them. But I'm assuming the size parameter in not supposed to be that big, so this can make it.
+pick them. But I'm assuming the size parameter is not supposed to be that big, so this can make it.
 
 ## Data Structures
 
