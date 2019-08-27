@@ -33,7 +33,7 @@ func dayDistinctCount(t time.Time) int {
 	if m == nil {
 		return 0
 	}
-	d := m.days[t.Day()]
+	d := m.days[t.Day()-1]
 	if d == nil {
 		return 0
 	}
@@ -50,7 +50,7 @@ func minuteDistinctCount(t time.Time) int {
 	if m == nil {
 		return 0
 	}
-	d := m.days[t.Day()]
+	d := m.days[t.Day()-1]
 	if d == nil {
 		return 0
 	}
@@ -76,7 +76,7 @@ func secondDistinctCount(t time.Time) int {
 	if m == nil {
 		return 0
 	}
-	d := m.days[t.Day()]
+	d := m.days[t.Day()-1]
 	if d == nil {
 		return 0
 	}

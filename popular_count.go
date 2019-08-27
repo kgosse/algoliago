@@ -49,7 +49,7 @@ func dayPopularCount(t time.Time, s int) (res popularResponse) {
 	if m == nil {
 		return
 	}
-	d := m.days[t.Day()]
+	d := m.days[t.Day()-1]
 	if d == nil {
 		return
 	}
@@ -74,7 +74,7 @@ func minutePopularCount(t time.Time, s int) (res popularResponse) {
 	if m == nil {
 		return
 	}
-	d := m.days[t.Day()]
+	d := m.days[t.Day()-1]
 	if d == nil {
 		return
 	}
@@ -108,7 +108,7 @@ func secondPopularCount(t time.Time, s int) (res popularResponse) {
 	if m == nil {
 		return
 	}
-	d := m.days[t.Day()]
+	d := m.days[t.Day()-1]
 	if d == nil {
 		return
 	}

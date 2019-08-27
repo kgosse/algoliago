@@ -13,9 +13,9 @@
   - handle count requests (done)
   - handle popular requests (done)
 # tests
-  * test data structure creation
-  * test count requests
-  * test popular requests
+  - test data structure creation (done)
+  - test count requests (done)
+  - test popular requests (done)
   * add benchmark tests
 # readme
   - write readme (done)

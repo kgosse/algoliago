@@ -13,7 +13,7 @@ func updateYear(y *year, r *record) error {
 	m := y.months[i]
 	if m == nil {
 		m = &month{
-			id:   i,
+			id:   i + 1,
 			urls: make(map[string]int),
 		}
 		y.months[i] = m
@@ -30,11 +30,11 @@ func updateMonth(m *month, r *record) error {
 		m.sortedurls = append(m.sortedurls, urls[r.url])
 	}
 
-	i := r.time.Day()
+	i := r.time.Day() - 1
 	d := m.days[i]
 	if d == nil {
 		d = &day{
-			id:   i,
+			id:   i + 1,
 			urls: make(map[string]int),
 		}
 		m.days[i] = d

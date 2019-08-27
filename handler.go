@@ -12,16 +12,16 @@ import (
 )
 
 type countResponse struct {
-	Count int `json:count`
+	Count int `json:"count"`
 }
 
 type popularResponse struct {
-	Queries []queryItem `json:queries`
+	Queries []queryItem `json:"queries"`
 }
 
 type queryItem struct {
-	Query string `json:query`
-	Count int    `json:count`
+	Query string `json:"query"`
+	Count int    `json:"count"`
 }
 
 func newHandler() *mux.Router {
