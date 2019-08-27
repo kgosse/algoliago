@@ -1,5 +1,4 @@
 # algoliago
-algolia technical test.
 The test subject can be found: [here](https://gist.github.com/sfriquet/55b18848d6d58b8185bbada81c620c4a)
 
 ## Time Complexity
