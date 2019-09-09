@@ -1,6 +1,23 @@
 # algoliago
 The test subject can be found: [here](https://gist.github.com/sfriquet/55b18848d6d58b8185bbada81c620c4a)
 
+## Requirements
+
+Make sure you have [go](https://golang.org/doc/install) installed.
+
+## How to run the program ?
+
+```
+42sh> go run .
+```
+The program will be running on localhost port 8080 (by default)
+
+## How to run the tests ?
+
+```
+42sh> go test .
+```
+
 ## Time Complexity
 
 My focus was to organise the data so that I could have the best possible response time to queries.
