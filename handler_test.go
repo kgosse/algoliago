@@ -43,6 +43,36 @@ func TestPopularHandler(t *testing.T) {
 				]
 			  }`,
 		},
+		{
+			"route /1/queries/popular/2015-08-01%2000:03:50?size=2",
+			"/1/queries/popular/2015-08-01%2000:03:50?size=2",
+			`{
+				"queries": [
+				  { "query": "%22http%3A%2F%2Fnewpickuptrucks2016.com%2F2016-chevrolet-el-camino-coming-back%2F%22", "count": 1 },
+				  { "query": "%22http%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DaBKRgTNqc5E%22", "count": 1 }
+				]
+			  }`,
+		},
+		{
+			"route /1/queries/popular/2015-08?size=3",
+			"/1/queries/popular/2015-08?size=3",
+			`{
+				"queries": [
+				  { "query": "http%3A%2F%2Fwww.getsidekick.com%2Fblog%2Fbody-language-advice", "count": 6675 },
+				  { "query": "http%3A%2F%2Fwebboard.yenta4.com%2Ftopic%2F568045", "count": 4652 },
+				  { "query": "http%3A%2F%2Fwebboard.yenta4.com%2Ftopic%2F379035%3Fsort%3D1", "count": 3100 }
+				]
+			  }`,
+		},
+		{
+			"route /1/queries/popular/2015-08-04%2005:57?size=1",
+			"/1/queries/popular/2015-08-04%2005:57?size=1",
+			`{
+				"queries": [
+				  { "query": "docker", "count": 2 }
+				]
+			  }`,
+		},
 	}
 
 	for _, test := range testCases {
@@ -106,6 +136,11 @@ func TestCountHandler(t *testing.T) {
 			"route /1/queries/count/2015-08-01%2000:04",
 			"/1/queries/count/2015-08-01%2000:04",
 			"{\"count\":617}",
+		},
+		{
+			"route /1/queries/count/2015-08-01%2000:03:50",
+			"/1/queries/count/2015-08-01%2000:03:50",
+			"{\"count\":10}",
 		},
 	}
 

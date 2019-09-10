@@ -89,7 +89,7 @@ func minutePopularCount(t time.Time, s int) (res popularResponse) {
 
 	for i := 0; i < s; i++ {
 		u := iurls[mn.sortedurls[i]]
-		v := d.urls[u]
+		v := mn.urls[u]
 		q := queryItem{
 			u,
 			v,
@@ -128,7 +128,7 @@ func secondPopularCount(t time.Time, s int) (res popularResponse) {
 
 	for i := 0; i < s; i++ {
 		u := iurls[sec.sortedurls[i]]
-		v := d.urls[u]
+		v := sec.urls[u]
 		q := queryItem{
 			u,
 			v,

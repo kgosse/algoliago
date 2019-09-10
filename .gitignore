@@ -43,3 +43,4 @@ tags
 !.vscode/extensions.json
 
 algoliago
+coverage.out
