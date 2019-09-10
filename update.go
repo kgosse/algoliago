@@ -2,12 +2,7 @@ package main
 
 func updateYear(y *year, r *record) error {
 
-	v, ok := y.urls[r.url]
-	y.urls[r.url] = v + 1
-	if !ok {
-		y.distinctCount++
-		y.sortedurls = append(y.sortedurls, urls[r.url])
-	}
+	updateDisctinctCount(&y.distinctCount, y.urls, &y.sortedurls, r.url)
 
 	i := int(r.time.Month()) - 1
 	m := y.months[i]
@@ -23,12 +18,8 @@ func updateYear(y *year, r *record) error {
 }
 
 func updateMonth(m *month, r *record) error {
-	v, ok := m.urls[r.url]
-	m.urls[r.url] = v + 1
-	if !ok {
-		m.distinctCount++
-		m.sortedurls = append(m.sortedurls, urls[r.url])
-	}
+
+	updateDisctinctCount(&m.distinctCount, m.urls, &m.sortedurls, r.url)
 
 	i := r.time.Day() - 1
 	d := m.days[i]
@@ -44,12 +35,8 @@ func updateMonth(m *month, r *record) error {
 }
 
 func udpateDay(d *day, r *record) error {
-	v, ok := d.urls[r.url]
-	d.urls[r.url] = v + 1
-	if !ok {
-		d.distinctCount++
-		d.sortedurls = append(d.sortedurls, urls[r.url])
-	}
+
+	updateDisctinctCount(&d.distinctCount, d.urls, &d.sortedurls, r.url)
 
 	i := r.time.Hour()
 	h := d.hours[i]
@@ -64,12 +51,8 @@ func udpateDay(d *day, r *record) error {
 }
 
 func updateHour(h *hour, r *record) error {
-	v, ok := h.urls[r.url]
-	h.urls[r.url] = v + 1
-	if !ok {
-		h.distinctCount++
-		h.sortedurls = append(h.sortedurls, urls[r.url])
-	}
+
+	updateDisctinctCount(&h.distinctCount, h.urls, &h.sortedurls, r.url)
 
 	i := r.time.Minute()
 	m := h.minutes[i]
@@ -84,12 +67,8 @@ func updateHour(h *hour, r *record) error {
 }
 
 func updateMinute(m *minute, r *record) error {
-	v, ok := m.urls[r.url]
-	m.urls[r.url] = v + 1
-	if !ok {
-		m.distinctCount++
-		m.sortedurls = append(m.sortedurls, urls[r.url])
-	}
+
+	updateDisctinctCount(&m.distinctCount, m.urls, &m.sortedurls, r.url)
 
 	i := r.time.Second()
 	s := m.seconds[i]
@@ -104,12 +83,8 @@ func updateMinute(m *minute, r *record) error {
 }
 
 func updateSecond(s *second, r *record) error {
-	v, ok := s.urls[r.url]
-	s.urls[r.url] = v + 1
-	if !ok {
-		s.distinctCount++
-		s.sortedurls = append(s.sortedurls, urls[r.url])
-	}
+
+	updateDisctinctCount(&s.distinctCount, s.urls, &s.sortedurls, r.url)
 
 	s.records = append(s.records, r.id)
 
