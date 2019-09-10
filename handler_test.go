@@ -9,10 +9,17 @@ import (
 	"testing"
 )
 
-func TestPopularHandler(t *testing.T) {
+func TestHandlers(t *testing.T) {
 	populateDB("hn_logs.tsv")
 	ts := httptest.NewServer(newHandler())
 	defer ts.Close()
+
+	testPopularHandler(t, ts)
+	testCountHandler(t, ts)
+
+}
+
+func testPopularHandler(t *testing.T, ts *httptest.Server) {
 
 	testCases := []struct {
 		title string // title of the test
@@ -107,10 +114,7 @@ func TestPopularHandler(t *testing.T) {
 	}
 }
 
-func TestCountHandler(t *testing.T) {
-	populateDB("hn_logs.tsv")
-	ts := httptest.NewServer(newHandler())
-	defer ts.Close()
+func testCountHandler(t *testing.T, ts *httptest.Server) {
 
 	testCases := []struct {
 		title string // title of the test
